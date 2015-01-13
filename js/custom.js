@@ -69,14 +69,6 @@ $(document).ready(function(){
 	// Form Validation
 	/////////////////////////////////////////////////////////////////
 
-	
-	//$('#custom_form').formValidation({
-	//	validateText: ["name","message"],
-	//	validateEmail: ["email"],
-	//	validateSpam: true
-	//	//captchaTheme: 'greyscale' // default, mini, dark, mini-dark, light, mini-light, greyscale, mini-greyscale
-	//});
-
 	var app = {
 
 		initialize : function () {
@@ -89,8 +81,9 @@ $(document).ready(function(){
 		},
 
 		setUpListeners: function () {
+			//$('.nav a').on('click', $(this).parent().toggleClass('active'));
 			$('#orderFormId').on('submit', app.submitForm);
-			$('#resetButton').on('click', app.resetForm);
+			$('#resetButtonId').on('click', app.resetForm);
 		},
 
 		submitForm: function (e) {
@@ -125,42 +118,40 @@ $(document).ready(function(){
 					label = formGroup.find('label').text().toLowerCase(),
 					errorMsg = "Введите " + label;
 
-				if ((input.attr('id') === 'sum')) {
-					result = app.validateSum(val);
-					errorMsg = "Сумма указана не верно";
+				if (val.length === 0) {
 					input.tooltip({
 						trigger: 'manual',
 						placement: 'left',
 						title: errorMsg
 					}).tooltip('show');
-				}
-
-				if (val.length === 0) {
-					input.tooltip({
-						trigger: 'manual',
-						placement: (input.attr('id') === 'emailFieldId') ? 'right' : 'left',
-						title: errorMsg
-					}).tooltip('show');
 					result = false;
+				}
+				else if  ((input.attr('id') === 'sum')) {
+					result = app.validateSum(parseInt(val));
+					errorMsg = "Сумма указана не верно";
+					if (!result) {
+						input.tooltip({
+							trigger: 'manual',
+							placement: 'left',
+							title: errorMsg
+						}).tooltip('show');
+					}
 				}
 				else {
 					input.tooltip('hide');
 				}
-
-
-
 			});
-
+			console.log("result", result);
 			return result;
 		},
 
 		validateSum: function (val) {
 			var result = true;
 
-			if (($('#arg1').text() + $('#arg2').text()) !== val) {
+			if (parseInt($('#arg1').text()) + parseInt($('#arg2').text()) !== val) {
 				result = false;
 			}
-
+			console.log("result sum", result);
 			return result;
 		},
 

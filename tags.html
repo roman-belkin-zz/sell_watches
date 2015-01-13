@@ -20,7 +20,7 @@
 		<header id="main-header">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-6 split-nav-left vert-nav">
+					<div class="col-md-12 col-sm-6 split-nav-left vert-nav">
 
 						<div class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
@@ -34,30 +34,30 @@
 
 							<div class="navbar-collapse collapse">
 								<ul class="nav navbar-nav nav-justified">
-									<li class="active"><a href="#">Nav Item 1</a></li>
-									<li><a href="#">Nav Item 2</a></li>
-									<li><a href="#">Nav Item 3</a></li>
+									<li><a href="#productDescriptionId">Описание</a></li>
+									<li><a href="#orderFormContainerId">Форма заказа</a></li>
+									<li><a href="#contactId">Контакты</a></li>
 								</ul>
 							</div>
 						</div>
 
 					</div>
-					<div class="col-md-4 split-nav-logo">
-						<!-- LOGO -->
-						<div id="logo" class="split-nav-logo-desktop"><a href="/"><img src="http://placehold.it/720x440/149cd7/149cd7" /></a></div>
-					</div>
-					<div class="col-md-4 col-sm-6 split-nav-right vert-nav">
-					
-						<div class="navbar navbar-default" role="navigation">
-							<div class="navbar-collapse collapse">
-								<ul class="nav navbar-nav nav-justified">
-									<li><a href="#">Nav Item 4</a></li>
-									<li><a href="#">Nav Item 5</a></li>
-								</ul>
-							</div>
-						</div>
-					
-					</div>
+					<!--<div class="col-md-4 split-nav-logo">-->
+						<!--&lt;!&ndash; LOGO &ndash;&gt;-->
+						<!--<div id="logo" class="split-nav-logo-desktop"><a href="/"><img src="http://placehold.it/720x440/149cd7/149cd7" /></a></div>-->
+					<!--</div>-->
+					<!--<div class="col-md-4 col-sm-6 split-nav-right vert-nav">-->
+
+						<!--<div class="navbar navbar-default" role="navigation">-->
+							<!--<div class="navbar-collapse collapse">-->
+								<!--<ul class="nav navbar-nav nav-justified">-->
+									<!--<li><a href="#">Nav Item 4</a></li>-->
+									<!--<li><a href="#">Nav Item 5</a></li>-->
+								<!--</ul>-->
+							<!--</div>-->
+						<!--</div>-->
+
+					<!--</div>-->
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -72,7 +72,7 @@
 					<div class="col-md-2 col-sm-6 serv-round">
 						<div class="animate-fadein-icon animatedEntrance">        
  							<a href="#">
-								<img src="http://placehold.it/720x720/21b2eb/058dcd" />
+								<img src="img/720/green.png" />
 								<div class="overlay"></div>
 							</a>
 						</div>
@@ -128,10 +128,10 @@
 		</div>		
 		<div id="slider">
 			<div class="camera_slider">
-				<div data-src="http://placehold.it/1920x400/21b2eb/058dcd"></div>
-				<div data-src="http://placehold.it/1920x400/058dcd/21b2eb"></div>
+				<div data-src="img/1920/green.png"></div>
+				<div data-src="img/1920/4colors.png"></div>
 			</div>
-		</div>	<div class="content-block">
+		</div>	<div class="content-block" id="productDescriptionId">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -143,29 +143,29 @@
 				</div>
 			</div>
 		</div>		
-		<div class="form-block">
+		<div class="form-block" id="orderFormContainerId">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4 col-sm-6">
-						<img src="http://placehold.it/720x850/21b2eb/058dcd" />
-					</div>
-					<div class="col-md-8 col-sm-6">
-						<form method="post" id="orderFormId" name="ordeForm">
+					<!--<div class="col-md-4 col-sm-6">-->
+						<!--<img src="http://placehold.it/720x850/21b2eb/058dcd" />-->
+					<!--</div>-->
+					<div class="col-md-8 col-md-offset-2 col-sm-12">
+						<form method="post" id="orderFormId" name="orderForm">
 							<div class="form-group">
 								<label >Имя</label>
-								<input  type="text" id="name" name="name" class="form-control">
+								<input type="text" id="customerNameId" name="customerName" class="form-control">
 							</div>
 							<div class="form-group">
 								<label >Телефон</label>
-								<input type="tel" id="tel" name="tel" class="form-control" >
+								<input type="tel" id="telId" name="tel" class="form-control" >
 						  	</div>
 							<div class="form-group">
 								<label >Электронный адрес</label>
-								<input type="email" id="email" name="email" class="form-control" >
+								<input type="email" id="emailId" name="email" class="form-control" >
 						  	</div>
 						  	<div class="form-group">
 								<label >Цвет</label>
-								<select id="color" class="form-control" >
+								<select id="colorId" class="form-control" >
 									<option>Белый</option>
 									<option>Черный</option>
 									<option>Зеленый</option>
@@ -182,14 +182,14 @@
 								<label>Сколько будет <span id="arg1"></span>+<span id="arg2"></span>?</label>
 								<input  type="text" id="sum" name="sum" class="form-control">
 							</div>
-						  	<button type="submit" class="btn btn-primary btn-lg" id="submit">Отправить</button>
-							<button type="button" class="btn btn-default pull-right" id="resetButton">Очистить</button>
+						  	<button type="submit" class="btn btn-primary" id="submitButtonId">Отправить</button>
+							<button type="button" class="btn btn-default pull-right" id="resetButtonId">Очистить</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>		
-		<div class="footer-block">
+		<div class="footer-block" id="contactId">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
